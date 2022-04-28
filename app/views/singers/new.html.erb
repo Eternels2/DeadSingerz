@@ -1,0 +1,12 @@
+<div class="new-form">
+  <p><%= simple_form_for(@singer) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :bio %>
+    <%= f.input :death_year %>
+    <p class="p-photo-field">Add a picture</p>
+    <%= f.file_field :photo %>
+    <%= f.submit "Add your DeadSingerz", class: "btn btn-primary"%>
+  <% end %></p>
+</div>

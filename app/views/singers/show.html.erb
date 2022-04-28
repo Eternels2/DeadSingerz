@@ -1,0 +1,63 @@
+<div class="card-image">
+  <%= cl_image_tag @singer.photo.key, crop: :fill, class: "img-fluid rounded-start" %>
+</div>
+
+<div class="my-container">
+      <div class="card-body">
+        <h1 class="card-title"><strong><%= @singer.name %></strong></h1>
+        <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
+        <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
+        <p class="card-text"><%= @singer.bio %></p>
+        <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
+
+             <div class="form-booking">
+         <%= simple_form_for [@singer, @booking] do |b| %>
+
+         <%= b.input :user_id, input_html: { value: current_user.id }, as: :hidden %>
+         <%= b.input :singer_id, input_html: { value: @singer.id} , as: :hidden %>
+         <%= b.input :date, as: :date, html5: true %>
+
+         <%= b.button :submit, class: "btn btn-flat"%>
+
+         <%end%>
+        </div>
+        <br>
+        <br>
+        <p><%= @singer.name %>'s ratings: </p>
+        <% @ratingsArray.each do |rating| %>
+                <% case rating.rating %>
+                  <% when 1 %>
+                  <i class="fa-solid fa-star"></i>
+                  <% when 2 %>
+                   <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+                  <% when 3 %>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <% when 4 %>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <% when 5 %>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <% end %>
+
+          <p>"<%= "#{rating.review}" %>"</p>
+          </p>
+          <% end %>
+
+        <div class="my-container container-review">
+      <div class=" adding-review">
+      <h2>Add a Review to <%= @singer.name %></h2>
+        <%= simple_form_for [@singer, @rating] do |f| %>
+         <%= f.input :rating %>
+         <%= f.input :review %>
+         <%= f.submit class: "btn btn-primary align-text-bottom" %>
+         <% end %>
+      </div>
+  </div>
+
+
+
+
+
+      </div>
+    </div>
+
+</div>

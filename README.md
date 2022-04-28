@@ -1,1 +1,1 @@
-# DeadSingerz
+deadsingerz, reservez votre chanteur.

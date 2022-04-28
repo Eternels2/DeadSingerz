@@ -1,0 +1,52 @@
+
+// Import page-specific CSS files here.
+.container{
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 25%);
+  grid-gap: 12px;
+  justify-content: space-around;
+}
+
+.card{
+  width: 200px;
+  height: 200px;
+  margin-top: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 8px;
+  border: none;
+}
+
+.card-body{
+  display: flexbox
+}
+
+.card-background{
+  background-size: cover;
+}
+//   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+
+// }
+
+.card-title{
+  font-weight: 800;
+  color: white;
+  margin: 12px;
+  margin-top: 40px;
+  margin-bottom: 64px;
+}
+
+.btn{
+  border-radius: 8px;
+  opacity: 0.8;
+  background-color: #3e37b8 !important;
+  border-color: #3e37b8 !important;
+  filter: alpha(opacity=90);
+}
+
+
+.btn:hover {
+  background-color: white !important;
+  color: #3e37b8 !important;
+  opacity: 1;
+}

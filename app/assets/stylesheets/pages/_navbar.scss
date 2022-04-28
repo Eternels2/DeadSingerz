@@ -1,0 +1,28 @@
+.navbar-lewagon .navbar-brand img {
+  width: 130px;
+  margin-top: 10px;
+}
+
+.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+
+}
+
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.sticky-top {
+  position: sticky
+}
